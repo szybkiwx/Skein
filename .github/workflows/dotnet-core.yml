@@ -21,7 +21,7 @@ jobs:
       with:
           args: deploy --dir=publishoutput/wwwroot --prod #push this folder to Netlify
       env: # These are the environment variables added in GitHub Secrets for this repo
-          NETLIFY_AUTH_TOKEN: jhgjhg #${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: gfdgd # ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       
           #secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]' 
