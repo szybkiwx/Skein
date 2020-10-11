@@ -1,0 +1,62 @@
+@page "/skeins"
+@inject HttpClient Http
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="skeins" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var skein in _skeins)
+                    {
+                        <tr>
+                            <td>@skein.Number</td>
+                            <td>@skein.Count</td>
+                        </tr>
+                    }
+
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+    <!-- /.card -->
+    </div>
+<!-- /.card-body -->
+</div>
+
+
+@code {
+    private Skein[] _skeins;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _skeins = new[]
+        {
+            new Skein { Number = 111, Count = 3 },
+            new Skein { Number = 112, Count = 7 },
+            new Skein { Number = 113, Count = 8 },
+            new Skein { Number = 114, Count = 3 },
+        };
+    //_forecasts = await WebRequestMethods.Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    public class Skein
+    {
+        public int Number { get; set; }
+        public int Count { get; set;   }
+    }
+
+}

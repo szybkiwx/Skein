@@ -1,15 +1,16 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <NavMenu />
-</div>
+    <!-- /.sidebar -->
+</aside>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
 
-    <div class="content px-4">
-        @Body
-    </div>
+<div class="content-wrapper">
+    
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">@Body</div>
+    </section>
 </div>
